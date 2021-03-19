@@ -51,7 +51,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="Account.html">Account.html</a>
+                            <a class="nav-link" href="Account">Account.html</a>
                         </li>
 
                         <li class="nav-item">
