@@ -321,9 +321,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
         </div>
     </div>
 
-
-
-
     <script src="js/home.js"></script>
 </body>
 
