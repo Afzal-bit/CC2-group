@@ -28,7 +28,7 @@ if(!$login){
                    
               header("location:admin.php");  
             }else if($login['Level']=='Buyer') { 
-              header("location:loggedInBuyer.php");
+              header("location:buyer.php");
            }else if($login['Level']=='Seller'){
             header("location:sellerDashboard.php");
            }
