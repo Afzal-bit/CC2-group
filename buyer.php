@@ -65,14 +65,14 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
     <div class="main-banner header-text" id="top">
         <div class="slideshow-container">
 
-            
+         
         <div class="slide slide1">
                 <div class="img-fill">
                     <div class="text-slide">
                         <h6>Welcome to CarRodio</h6>
                         <h4>Sell your vehicle<br> at the best Market value<br> with easy steps </h4>
                         <p>Sell your car and upgrade to a newer car. Using CarRodio you can Sell and Buy too!</p>
-                        <a href="home.html" class="round-button">contact us</a>
+                        <a href='#bottom' class="round-button">contact us</a>
                     </div>
                 </div>
             </div>
@@ -81,10 +81,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
             <div class="slide slide2">
                 <div class="img-fill">
                     <div class="text-slide">
-                    <h6>Welcome to CarRodio</h6>
+                        <h6>Welcome to CarRodio</h6>
                         <h4>Sell your vehicle<br> at the best Market value<br> with easy steps </h4>
                         <p>Sell your car and upgrade to a newer car. Using CarRodio you can Sell and Buy too!</p>
-                         <a href="contact.html" class="round-button">contact us</a>
+                        <a href='#bottom' class="round-button">contact us</a>
                     </div>
                 </div>
             </div>
@@ -92,10 +92,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
             <div class="slide slide3">
                 <div class="img-fill">
                     <div class="text-slide">
-                    <h6>Welcome to CarRodio</h6>
+                        <h6>Welcome to CarRodio</h6>
                         <h4>Sell your vehicle<br> at the best Market value<br> with easy steps </h4>
                         <p>Sell your car and upgrade to a newer car. Using CarRodio you can Sell and Buy too!</p>
-                        <a href="contact.html" class="round-button">contact us</a>
+                        <a href='#bottom' class="round-button">contact us</a>
                     </div>
                 </div>
             </div>
@@ -189,7 +189,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
             </div>
         </form>
     </div>
-
+    <br>
+    <br>
     <!-- ********************** About Us *************************** -->
 
     <div class="about-us">
@@ -276,6 +277,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                         <li><a href="#">Terms</a></li>
                     </ul>
                 </div>
+                <div id="bottom"></div>
                 <div class="col-md-3 footer-item last-item">
                     <h4>Contact Us</h4>
                     <div class="contact-form">
