@@ -113,8 +113,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
              
             </nav>
         </div>
-
-<!-- Dashboard panels items !-->
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid">
