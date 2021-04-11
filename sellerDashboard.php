@@ -71,7 +71,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                     </div>
                 </div>
             </div>
-
+            <br>
+                    <br>
+                    <h1> seller all ads </h1>
+                    
         </div>
     </div>
     <div class="about-us">

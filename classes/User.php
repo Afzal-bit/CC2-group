@@ -98,8 +98,6 @@ class User
 	}
 	
 	public function details(){
-		
-
 		$result=mysqli_query($this->db,"SELECT id ,name, email,expiry FROM users WHERE level = 'User'");
         return $result;
 		
