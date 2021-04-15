@@ -202,11 +202,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
         while($row = mysqli_fetch_array($result)){
 
         }
-    ?>
     }
-
-
     ?>
+   
     </div>
     <br>
     <br>
