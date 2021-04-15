@@ -1,8 +1,9 @@
 <?php  
     session_start();
     include_once('classes/Advertisement.php');  
-       
+    
     $advert = new Advertisement();  
+
 ?>
 
 <!DOCTYPE html>
@@ -21,11 +22,12 @@
 
 <h1>Pending Approval</h2>
 
+
 <div class="table-wrapper">
     <table class="fl-table">
         <thead>
         <tr>
-
+            <th>Ad ID</th>
             <th>Title</th>
             <th>Brand</th>
 			<th>Model</th>
@@ -33,6 +35,7 @@
 			<th>Price</th>
             <th>Seller</th>
             <th>Action</th>
+            
            
         </tr>
         </thead>
@@ -40,9 +43,16 @@
 		
 		$result=$advert->details();
 
+
+        
+// calling the data from database
+        
+
+        
 		while($row = mysqli_fetch_array($result)) {
-?>
+?>          
 			<tr>
+            <td><?php echo $row['Id'];?></td>
 			<td><?php echo $row['title'];?></td>
 			<td><?php echo $row['brand'];?></td>
 			<td><?php echo $row['model'];?></td>
@@ -50,15 +60,32 @@
 
             <td><?php echo $row['price'];?></td>
 			<td><?php echo $row['sellername'];?></td>
-			<td><a href="adConfirmation.php" id=<?php echo $row->id;?>>
-            <i class="fa fa-eye" style="font-size:30px;color:purple"></i></a></td>
-			
+            <form method="post">
+            <td><input type="submit" value="Add" name="Add"/></td>
+            <td><input type="submit" value="Remove" name="Removed"/></td></tr>
+            </form>
+			<?php
+             // Add methods to DB
+            if(isset($_POST['Add'])){
+                $advert->updateAd($row['Id']);
+
+
+            }if (isset($_POST['Removed'])){
+                echo "not workiung";
+            }
+                    
+
+
+
+			?>
 			
 		<?php  }
+        
 		?>
 		
         
     </table>
+
 </div>
 
 

@@ -109,11 +109,22 @@ class Advertisement
 	public function details(){
 		
 
-		$result=mysqli_query($this->db,"SELECT title, brand, model, fuel, price, sellername FROM advertisement WHERE approved = 'No'");
+		$result=mysqli_query($this->db,"SELECT Id, title, brand, model, fuel, price, sellername FROM advertisement WHERE approved = 'No'");
         return $result;
 		
     }
-	
-	
-	}
+
+
+
+
+    public function updateAd($Id){
+        
+            mysqli_query($this->db,"UPDATE advertisement SET Approved='yes' WHERE Id= '$Id';");
+
+
+        
+            
+        
+    }
+}
 ?>

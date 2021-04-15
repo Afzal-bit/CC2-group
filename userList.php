@@ -19,7 +19,7 @@
 
 <body>
 
-<h1>Pending Approval</h2>
+<h1>Manage User</h2>
 
 <div class="table-wrapper">
     <table class="fl-table">
