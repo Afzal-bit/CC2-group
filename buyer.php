@@ -36,20 +36,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                             <a class="nav-link" href="index.html">Home
                     <span class="sr-only">(current)</span>
                   </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="addAvert.html">Listings</a>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" onclick="toggle()">About</a>
-
-                            <div class="dropdown-menu" class="myDropdown">
-                                <a class="dropdown-item" href="about.html">About Us</a>
-                                <a class="dropdown-item" href="faq.html">FAQ</a>
-                                <a class="dropdown-item" href="terms.html">Terms</a>
-                            </div>
-                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="Account">Account</a>
                         </li>
@@ -108,11 +95,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
 
 
     <!-- Search Form -->
+   
 
+   
     <div class="s007">
-        <form>
+        <form >
             <div class="inner-form">
-
                 <div class="advance-search">
                     <span class="desc">Advanced Search</span>
                     <div class="row">
@@ -188,6 +176,20 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                 </div>
             </div>
         </form>
+    </div>
+    <div class="container" style="width: 700px;">
+    <?php
+    // $query = "SELECT Tthe table name to create from database"
+    $result = mysqli_query($connect, $query);
+    if(mysqli_num_rows($result) > 0){
+        while($row = mysqli_fetch_array($result)){
+
+        }
+    ?>
+    }
+
+
+    ?>
     </div>
     <br>
     <br>
