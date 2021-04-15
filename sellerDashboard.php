@@ -22,41 +22,50 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
 
 <body>
 
-    <header class="">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    <h2>CarRodio</h2>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home
-                    <span class="sr-only">(current)</span>
-                  </a>
-                        </li>
-                        
-                     
-                        <li class="nav-item dropdown">
-                            <a class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" onclick="toggle()">Advertisements</a>
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                       
+                        <a href="index.html" class="logo">Car<em>Rodio</em></a>
+                    
+                        <ul id="toggle_nav" class="nav" >
+                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="cars.html">Listings</a></li>
+                            <li class="dropdown">
+                                <a id="sub_menu" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Advertisements</a>
+                              
+                                <div id="myDropdown" class="dropdown-menu">
+                                    <a class="dropdown-item" href="about.html">All Ads</a>
+                                    <a class="dropdown-item" href="faq.html">Approved</a>
+                                    <a class="dropdown-item" href="terms.html">Pending Approval</a>
+                                </div>
+                            </li>
 
-                            <div class="dropdown-menu" id="myDropdown">
-                            <a class="dropdown-item" href="addAvert.php">Add</a>
-                                <a class="dropdown-item" href="AdDetails.php">Approved</a>
-                                <a class="dropdown-item" href="pendingAds.html">Pending Approval</a>
-                
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="logout.php">Logout</a>
-                        </li>
-                    </ul>
+
+                            
+                            <li><a href="listings.php.php">Fleet</a></li> 
+
+                            <li class="dropdown">
+                                <a id="sub_menu1" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+                              
+                                <div id="myDropdown1" class="dropdown-menu">
+                                    <a class="dropdown-item" href="myAccount.php">My Account</a>
+                                   
+                                    <a class="dropdown-item" href="logout.php">Logout</a>
+                                </div>
+                            </li>
+
+                        </ul>        
+                        <a id="ham_icon" class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
     <div class="main-banner header-text" id="top">
         <div class="slideshow-container">
