@@ -2,7 +2,7 @@
     session_start();
     include_once('classes/User.php');  
        
-    $advert = new User();  
+    $user = new User();  
 
 ?>
 
@@ -38,7 +38,7 @@
 		
 
 
-		$result=$advert->details();
+		$result=$user->details();
 
 		while($row = mysqli_fetch_array($result)) {
 ?>
