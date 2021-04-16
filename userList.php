@@ -30,6 +30,7 @@
             <th>Email</th>
 			<th>Level</th>
             <th>Phone</th>
+            <th>Action</th>
 			
         </tr>
         </thead>
@@ -46,11 +47,17 @@
 			<td><?php echo $row['Email'];?></td>
 			<td><?php echo $row['Level'];?></td>
 			<td><?php echo $row['Phone'];?></td>
+            <form method="post">
+            <td><input type="submit" value="Remove" name="Remove"/></td></tr>
+            </form>
 
-            
+            <?php    
+            if(isset($_POST['Remove'])){
+                
+
+            }
 			
-			
-		<?php  }
+		 }
 		?>
 		
         
