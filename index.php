@@ -9,6 +9,7 @@ if(isset($_SESSION['loggedin'])){
     }else if($_SESSION['level']=='Seller'){
         header('location:sellerDashboard.php');
     }
+    
 }
 
 

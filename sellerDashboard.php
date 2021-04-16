@@ -1,8 +1,17 @@
 <?php
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
-	header('Location: index.php');
-	exit;
+    header('Location: index.php');
+    exit;
+}else if($_SESSION['level']=="Admin"){
+    header('Location: adimin.php');
+    exit;
+
+ 
+
+}else if($_SESSION['level']=="Buyer"){
+    header('Location: buyer.php');
+    exit;
 }
 ?>
 

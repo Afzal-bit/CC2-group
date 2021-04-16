@@ -98,7 +98,7 @@ class User
 	}
 	
 	public function details(){
-		$result=mysqli_query($this->db,"SELECT id ,name, email,expiry FROM users WHERE level = 'User'");
+		$result=mysqli_query($this->db,"SELECT Id ,Name, Email, Level, Phone FROM users WHERE level = 'Seller' || level='Buyer'");
         return $result;
 		
     }
