@@ -1,10 +1,20 @@
 <?php
 session_start();
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
-	header('Location: index.php');
-	exit;
+    header('Location: index.php');
+    exit;
+}else if($_SESSION['level']=="Buyer"){
+    header('Location: buyer.php');
+    exit;
+
+ 
+
+}else if($_SESSION['level']=="Seller"){
+    header('Location: sellerDashboard.php');
+    exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
