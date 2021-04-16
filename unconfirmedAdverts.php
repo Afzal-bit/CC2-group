@@ -2,7 +2,8 @@
     session_start();
     include_once('classes/Advertisement.php');  
     
-    $advert = new Advertisement();  
+    $advert = new Advertisement(); 
+
 
 ?>
 
