@@ -3,6 +3,7 @@
     include_once('classes/User.php');  
        
     $advert = new User();  
+
 ?>
 
 <!DOCTYPE html>
