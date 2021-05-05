@@ -52,7 +52,8 @@ if(!$login){
         $user->setPassword($password);
         $user->setPhone($phone);
         $register = $user->userRegistration();
-	if (!$register) { 
+	
+        if (!$register) { 
 	echo "<script>alert('Email already exists')</script>";
             
         } else if($register!=null) {

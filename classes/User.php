@@ -107,5 +107,7 @@ class User
         return $hash;
     }
 	
+
 	}
 ?>
+

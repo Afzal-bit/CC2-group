@@ -1,8 +1,11 @@
 <?php  
     session_start();
+
     include_once('classes/User.php');  
        
     $user = new User();  
+
+    
 
 ?>
 
@@ -22,6 +25,8 @@
 
 <h1>Manage User</h2>
 
+
+
 <div class="table-wrapper">
     <table class="fl-table">
         <thead>
@@ -30,13 +35,17 @@
             <th>Username</th>
             <th>Email</th>
 			<th>Level</th>
+
             <th>Phone</th>
+
+            <th>Phone</th>  
+
             <th>Action</th>
 			
         </tr>
         </thead>
 		<?php
-		
+       
 
 
 		$result=$user->details();
@@ -60,9 +69,29 @@
 			
 		 }
 		?>
+<?php
+       while($row = mysqli_fetch_array($result)) {
+             ?>
+                    <tr>
+                    <td><?php echo $row['Name'];?></td>
+                    <td><?php echo $row['Email'];?></td>
+                    <td><?php echo $row['Level'];?></td>
+                    <td><?php echo $row['Phone'];?></td>
+                    <form method="post">
+                    <td><input type="submit" value="Delete" name="Delete"/></td></tr>
+                    </form>>
+                    <?php    }
+
 		
-        
-    </table>
+?>
+            
+			
+			
+
+		
+
+
+   
 </div>
 
 
