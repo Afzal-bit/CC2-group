@@ -204,15 +204,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
         </form>
     </div>
     <div class="container" style="width: 700px;">
-    <?php
-    // $query = "SELECT Tthe table name to create from database"
-    $result = mysqli_query($connect, $query);
-    if(mysqli_num_rows($result) > 0){
-        while($row = mysqli_fetch_array($result)){
-
-        }
-    }
-    ?>
+   
    
     </div>
     <br>
