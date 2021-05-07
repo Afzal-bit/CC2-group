@@ -47,6 +47,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                                 <a id="sub_menu" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Advertisements</a>
                               
                                 <div id="myDropdown" class="dropdown-menu">
+                                    <a class="dropdown-item" href="addAvert.php">Add Advertisement</a>
                                     <a class="dropdown-item" href="about.html">All Ads</a>
                                     <a class="dropdown-item" href="faq.html">Approved</a>
                                     <a class="dropdown-item" href="terms.html">Pending Approval</a>
