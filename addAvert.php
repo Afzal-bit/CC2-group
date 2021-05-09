@@ -198,6 +198,34 @@ if(isset($_POST['add'])){
                     </div>
                 </div>
 
+                <!-- Mileage and Engine Capacity -->
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="mileage" class="label-title">Mileage</label>
+                        <input type="text" name="mileage" id="year" class="form-input" placeholder="Mileage" required="required">
+                    </div>
+                    <div class="form-group right">
+                        <label for="mileage" class="label-title">Engine Capacity</label>
+                        <input type="text" name="eng_capacity" id="year" class="form-input" placeholder="Engine Capacity" required="required">
+                    </div>
+                </div>
+
+<!--This is the form for the application to select-->
+                <div class="form-group">
+                    <label class="label-title">Body Type</label>
+                    <select class="form-input" name="body_type" id="level" required>
+          <option placeholder="" value="">Select</option>
+            <option> Hatchback </option>
+            <option> Sedan </option>
+            <option> SUV </option>
+            <option> Coupe </option>
+            <option> Convertible </option>
+            <option> Wagon </option>
+            <option> Saloon </option>
+            <option> MPV </option>
+        </select>
+                </div>
+
 
 
 
