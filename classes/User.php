@@ -41,6 +41,7 @@ class User
         $count_row = $result->num_rows;         
         if($count_row == 0) {
 			
+            
             $query = 'INSERT INTO users SET name="'.$this->_name.'", email="'.$this->_email.'", level="'.$this->_level.'", password="'.$password.'", phone="'.$this->_phone.'"';             
             $result = $this->db->query($query) or die($this->db->error);
 			$query = 'SELECT * FROM users WHERE email="'.$this->_email.'"';           
