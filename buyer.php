@@ -40,7 +40,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                     
                         <ul id="toggle_nav" class="nav" >
                             <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="cars.html">Listings</a></li>
+                            <li><a href="listing.php">Listings</a></li>
                             <li class="dropdown">
                                 <a id="sub_menu" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
                               
@@ -60,6 +60,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                               
                                 <div id="myDropdown1" class="dropdown-menu">
                                     <a class="dropdown-item" href="myAccount.php">My Account</a>
+								
                                     <a class="dropdown-item" href="favourites.php">Favourites</a>
                                     <a class="dropdown-item" href="logout.php">Logout</a>
                                 </div>
@@ -204,7 +205,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
         </form>
     </div>
     <div class="container" style="width: 700px;">
-   
+    
    
     </div>
     <br>
