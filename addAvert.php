@@ -8,6 +8,13 @@ $db;
 $db = new dbConnection();
 $db = $db->returnConnection();
 if(isset($_POST['add'])){
+	$targetDir = "uploads/";
+    $allowTypes = array('jpg','png','jpeg'); 
+    $mainFileName = basename($_FILES['main_image']['name']); 
+    $targetFilePathMain = $targetDir . $mainFileName; 
+                 
+                // Check whether file type is valid 
+    $fileTypeMain = pathinfo($targetFilePathMain, PATHINFO_EXTENSION);
 
     $title=$_POST['vehicletitle'];
 	$model=$_POST['model'];
@@ -28,6 +35,14 @@ if(isset($_POST['add'])){
     $approved="No";
     $sellName=$_SESSION['name'];
     $email=$_SESSION['email'];
+	
+	if(in_array($fileTypeMain, $allowTypes)){
+        if(move_uploaded_file($_FILES["main_image"]["tmp_name"], $targetFilePathMain)){ 
+            
+        
+        }
+
+    }
 
     if(!empty(array_filter($_FILES['fileUpload']['name'])) || empty($_POST['vehicletitle'])){
         $advert->setTitle($title);
@@ -44,6 +59,7 @@ if(isset($_POST['add'])){
 
         $advert->setEngineCapacity($engineCapacity);
         $advert->setDescription($description);
+		$advert->setMainImage($mainFileName);
         $advert->setSName($sellName);
         $advert->setEmail($email);
 		$advert->setContact($contact);
@@ -51,8 +67,7 @@ if(isset($_POST['add'])){
         $advert->setApproved($approved);
         
         $added = $advert->addAdvert();
-        $targetDir = "uploads/"; 
-        $allowTypes = array('jpg','png','jpeg'); 
+        
 
         if($added !=null){
             $adId=$added['Id'];
@@ -232,7 +247,7 @@ if(isset($_POST['add'])){
                 <!-- Images -->
                 <div class="form-group">
 
-                    <label for="choose-file" class="label-title">Upload up to 5 Images</label> <br> Image 1 &nbsp; <input type="file" class="img_up" name="fileUpload[]">
+                    <label for="choose-file" class="label-title">Upload up to 5 Images</label> <br> Main Image &nbsp; <input type="file" class="img_up" name="main_image">
 
 
                 </div>
