@@ -16,6 +16,7 @@ class Advertisement
     private $_body;
     private $_engineCapacity;
     private $_description;
+    private $_mainImage;
     private $_sName;
     private $_email;
     private $_contact;
@@ -63,6 +64,11 @@ class Advertisement
     public function setDescription($description) {
         $this->_description = $description;
     }
+
+    public function setMainImage($mainImage) {
+        $this->_mainImage = $mainImage;
+    }
+
     public function setSName($sName) {
         $this->_sName = $sName;
     }
@@ -90,9 +96,9 @@ class Advertisement
         $approved="No";
         $query = 'INSERT INTO advertisement SET Title="'.$this->_title.'", Model="'.$this->_model.'", Brand="'.$this->_brand.'", Price="'.$this->_price.'", CarCondition="'.$this->_condition.'",
         Year="'.$this->_year.'", Transmission="'.$this->_transmission.'", Fuel="'.$this->_fuel.'", Mileage="'.$this->_mileage.'", Body="'.$this->_body.'",
-        EngineCapacity="'.$this->_engineCapacity.'", Description="'.$this->_description.'", SellerName="'.$this->_sName.'", Email="'.$this->_email.'", Contact="'.$this->_contact.'", Location="'.$this->_location.'", Approved="'.$this->_approved.'"';             
+        EngineCapacity="'.$this->_engineCapacity.'", Description="'.$this->_description.'", MainImage="'.$this->_mainImage.'", SellerName="'.$this->_sName.'", Email="'.$this->_email.'", Contact="'.$this->_contact.'", Location="'.$this->_location.'", Approved="'.$this->_approved.'"';             
         $result = $this->db->query($query) or die($this->db->error);
-        if($this->db->query($query) ===TRUE){
+        if($result ===TRUE){
             $last_id=$this->db->insert_id;
             $query = 'SELECT * FROM advertisement WHERE Id="'.$last_id.'"'; 
             $result = $this->db->query($query) or die($this->db->error); 
@@ -114,17 +120,33 @@ class Advertisement
 		
     }
 
+    public function adListing(){
+		
 
-
+		$result=mysqli_query($this->db,"SELECT Id, title, mileage, 
+        price, transmission, enginecapacity, mainimage from advertisement WHERE approved = 'Yes'");
+        return $result;
+		
+    }
 
     public function updateAd($Id){
         
             mysqli_query($this->db,"UPDATE advertisement SET Approved='yes' WHERE Id= '$Id';");
+ 
+    }
 
+    public function getFavorites($userId){
 
-        
-            
-        
+    }
+
+    public function getAdDetails($id){
+        $result=mysqli_query($this->db,"SELECT * from advertisement WHERE id = $id");
+        return $result;
+    }
+
+    public function getAdImages($id){
+        $result=mysqli_query($this->db,"SELECT pathname from ad_images WHERE Ad_Id = $id");
+        return $result;
     }
 }
 ?>

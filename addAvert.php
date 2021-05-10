@@ -8,6 +8,13 @@ $db;
 $db = new dbConnection();
 $db = $db->returnConnection();
 if(isset($_POST['add'])){
+	$targetDir = "uploads/";
+    $allowTypes = array('jpg','png','jpeg'); 
+    $mainFileName = basename($_FILES['main_image']['name']); 
+    $targetFilePathMain = $targetDir . $mainFileName; 
+                 
+                // Check whether file type is valid 
+    $fileTypeMain = pathinfo($targetFilePathMain, PATHINFO_EXTENSION);
 
     $title=$_POST['vehicletitle'];
 	$model=$_POST['model'];
@@ -28,6 +35,14 @@ if(isset($_POST['add'])){
     $approved="No";
     $sellName=$_SESSION['name'];
     $email=$_SESSION['email'];
+	
+	if(in_array($fileTypeMain, $allowTypes)){
+        if(move_uploaded_file($_FILES["main_image"]["tmp_name"], $targetFilePathMain)){ 
+            
+        
+        }
+
+    }
 
     if(!empty(array_filter($_FILES['fileUpload']['name'])) || empty($_POST['vehicletitle'])){
         $advert->setTitle($title);
@@ -44,6 +59,7 @@ if(isset($_POST['add'])){
 
         $advert->setEngineCapacity($engineCapacity);
         $advert->setDescription($description);
+		$advert->setMainImage($mainFileName);
         $advert->setSName($sellName);
         $advert->setEmail($email);
 		$advert->setContact($contact);
@@ -51,8 +67,7 @@ if(isset($_POST['add'])){
         $advert->setApproved($approved);
         
         $added = $advert->addAdvert();
-        $targetDir = "uploads/"; 
-        $allowTypes = array('jpg','png','jpeg'); 
+        
 
         if($added !=null){
             $adId=$added['Id'];
@@ -92,128 +107,129 @@ if(isset($_POST['add'])){
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/seller.css" />
-    <title>Animated Login</title>
-</head>
 
-<body class="advert_body">
-    <h2>Add Advertisement</h2>
-    <br>
-    <form class="addAdvert_form" action="" method="post" enctype="multipart/form-data">
-        <div class="form-group">
-            <label class="row-1">Vehicle Title</label>
-            <div class="col-sm-4">
-                <input type="text" name="vehicletitle" class="form-control" maxlength="30" required>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>HTML CSS Register Form</title>
+        <link rel="stylesheet" href="css/addAdvert_style.css">
+    </head>
+
+    <body>
+        <form class="signup-form" action="" method="post" enctype="multipart/form-data">
+
+            <!-- form header -->
+            <div class="form-header">
+                <h1>Create Advertisement</h1>
             </div>
-            <label class="col-sm-2 control-label">Brand</label>
-            <div class="col-sm-4">
-            <select class="selectpicker" name="brandname" required>
-            <option placeholder="" value="">Select</option>
+
+            <!-- form body -->
+            <div class="form-body">
+
+                <!-- Title and Brand -->
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="title" class="label-title">Title</label>
+                        <input type="text" name="vehicletitle" id="title" class="form-input" placeholder="Title" required="required" />
+                    </div>
+
+                    <div class="form-group right">
+                        <label class="label-title">Brand</label>
+                        <select class="form-input" name="brandname" id="level" required>
+                  <option placeholder="" value="">Select</option>
             <option> Honda </option>
             <option> Toyota </option>
             <option> BMW </option>
             <option> Mercedes Benz </option>
             <option> Audi </option>
             <option> Chrylser </option>
-            
-            
-            </select>
-            </div>
+                </select>
+                    </div>
 
-            <label class="col-sm-2 control-label">Condition</label>
-            <div class="col-sm-4">
-                <select class="selectpicker" name="condition" required>
-            <option placeholder="" value="">Select</option>
+                </div>
+
+                <div class="form-group">
+                    <label class="label-title">Vehicle Description</span></label>
+                    <div class="col-sm-10">
+                        <textarea class="form-input-text-area" name="vehicledescription" cols="100" rows="6" required></textarea>
+                    </div>
+                </div>
+
+
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="title" class="label-title">Model</label>
+                        <input type="text" name="model" id="model" class="form-input" placeholder="Model" required="required" />
+                    </div>
+
+                    <div class="form-group right">
+                        <label class="label-title">Condition</label>
+                        <select class="form-input" name="condition" id="level" required>
+              <option placeholder="" value="">Select</option>
             <option> Brand New </option>
             <option> Used </option>
             <option> Reconditioned </option>
-            
             </select>
-            </div>
+                    </div>
+                </div>
 
-        </div>
-        <br>
-        <br>
 
-        <div class="hr-dashed"></div>
-        <div class="form-group">
-        <label class="col-sm-2 control-label">Vehicle Description</span></label>
-        <div class="col-sm-10">
-        <textarea class="form-control-text" name="vehicledescription" cols="100" rows="6" required></textarea>
-        </div>
-    </div>
-    <br>
-    <br>
 
-        <div class="form-group">
-            <label class="row-1">Price (in Rs)</label>
-            <div class="col-sm-4">
-                <input type="text" name="price" class="form-control" required>
-            </div>
-            <label class="col-sm-2 control-label">Fuel Type</label>
-            <div class="col-sm-4">
-                <select class="selectpicker" name="fueltype" required>
-            <option placeholder="" value="">Select</option>
+                <!-- Price and Fuel Type -->
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="price" class="label-title">Price</label>
+                        <input type="text" name="price" id="price" class="form-input" placeholder="Price in Rs" required="required">
+                    </div>
+                    <div class="form-group right">
+                        <label class="label-title">Fuel Type</label>
+                        <select class="form-input" name="fueltype" id="level" required>
+                  <option placeholder="" value="">Select</option>
             <option> Petrol </option>
             <option> Diesel </option>
             <option> CNG </option>
             <option> Hybrid </option>
             <option> Electric </option>
-            
-            
-            
-            </select>
-            </div>
+                </select>
+                    </div>
+                </div>
 
-            <label class="row-1">Model</label>
-            <div class="col-sm-4">
-                <input type="text" name="model" class="form-control" required>
-            </div>
-
-        </div>
-        <br>
-        <br>
-        <div class="form-group">
-            <label class="row-1">Model Year</label>
-            <div class="col-sm-4">
-                <input type="text" name="year" class="form-control" required>
-            </div>
-            <label class="col-sm-2 control-label">Transmission</label>
-            <div class="col-sm-4">
-                <select class="selectpicker" name="transmission" required>
-            <option placeholder="" value="">Select</option>
+                <!-- Year and Transmission -->
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="year" class="label-title">Model Year</label>
+                        <input type="text" name="year" id="year" class="form-input" placeholder="Year" required="required">
+                    </div>
+                    <div class="form-group right">
+                        <label class="label-title">Transmission</label>
+                        <select class="form-input" name="transmission" id="level" required>
+                 <option placeholder="" value="">Select</option>
             <option> Manual </option>
             <option> Automatic </option>
-            
-            
-            
-            </select>
-            </div>
+                </select>
+                    </div>
+                </div>
 
-            <label class="row-1">Mileage</label>
-            <div class="col-sm-4">
-                <input type="text" name="mileage" class="form-control" required>
-            </div>
+                <!-- Mileage and Engine Capacity -->
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="mileage" class="label-title">Mileage</label>
+                        <input type="text" name="mileage" id="year" class="form-input" placeholder="Mileage" required="required">
+                    </div>
+                    <div class="form-group right">
+                        <label for="mileage" class="label-title">Engine Capacity</label>
+                        <input type="text" name="eng_capacity" id="year" class="form-input" placeholder="Engine Capacity" required="required">
+                    </div>
+                </div>
 
-        </div>
-        <br>
-        <br>
 
-        <div class="form-group">
-            <label class="row-1">Engine Capacity</label>
-            <div class="col-sm-4">
-                <input type="text" name="eng_capacity" class="form-control" required>
-            </div>
-            <label class="col-sm-2 control-label">Body Type</label>
-            <div class="col-sm-4">
-                <select class="selectpicker" name="body_type" required>
-            <option placeholder="" value="">Select</option>
+                <div class="form-group">
+                    <label class="label-title">Body Type</label>
+                    <select class="form-input" name="body_type" id="level" required>
+          <option placeholder="" value="">Select</option>
             <option> Hatchback </option>
             <option> Sedan </option>
             <option> SUV </option>
@@ -222,60 +238,68 @@ if(isset($_POST['add'])){
             <option> Wagon </option>
             <option> Saloon </option>
             <option> MPV </option>
+        </select>
+                </div>
 
-            
-            
-            
-            </select>
+
+
+
+                <!-- Images -->
+                <div class="form-group">
+
+                    <label for="choose-file" class="label-title">Upload up to 5 Images</label> <br> Main Image &nbsp; <input type="file" class="img_up" name="main_image">
+
+
+                </div>
+
+
+
+                <div class="horizontal-group">
+                    Image 2 &nbsp; <input type="file" class="img_up" name="fileUpload[]">
+                </div>
+                <br>
+
+                <div class="horizontal-group">
+                    Image 3 &nbsp; <input type="file" class="img_up" name="fileUpload[]">
+                </div>
+                <br>
+
+                <div class="horizontal-group">
+                    Image 4 &nbsp; <input type="file" class="img_up" name="fileUpload[]">
+                </div>
+                <br>
+
+                <div class="horizontal-group">
+                    Image 5 &nbsp; <input type="file" class="img_up" name="fileUpload[]">
+                </div>
+                <br>
+
+
+
+                <div class="horizontal-group">
+                    <div class="form-group left">
+                        <label for="year" class="label-title">Seller Phone</label>
+                        <input type="text" name="phone" id="phone" class="form-input" placeholder="Phone" required="required">
+                    </div>
+                    <div class="form-group right">
+                        <label for="year" class="label-title">Seller City</label>
+                        <input type="text" name="address" id="city" class="form-input" placeholder="City" required="required">
+                    </div>
+                </div>
+
+
+
             </div>
 
-        </div>
-        <br>
-        <br>
+            <!-- form-footer -->
+            <div class="form-footer">
 
-        <p>Upload Images</P><br>
-        <div class="form-group">
-<div class="col-sm-4">
-Image 1 &nbsp; <input type="file" class="img_up" name="fileUpload[]">
-</div>
-<div class="col-sm-4">
-Image 2 &nbsp; <input type="file" class="img_up" name="fileUpload[]">
-</div>
-<div class="col-sm-4">
-Image 3 &nbsp; <input type="file" class="img_up" name="fileUpload[]">
-</div>
-</div>
-
-<br>
-<div class="form-group">
-<div class="col-sm-4">
-Image 4 &nbsp; <input type="file" class="img_up" name="fileUpload[]">
-</div>
-<div class="col-sm-4">
-Image 5 &nbsp; <input type="file" class="img_up" name="fileUpload[]">
-</div>
-
-</div>
-
-<p>Contact Details</P><br>
-
-<div class="form-group">
-            <label class="row-1">Phone</label>
-            <div class="col-sm-4">
-                <input type="text" name="phone" class="form-control" required>
+                <button type="submit" name="add" class="btn">Post Advertisement</button>
             </div>
-</div>
 
-<div class="form-group">
-            <label class="row-1">City</label>
-            <div class="city_cont">
-                <input type="text" name="address" class="form-control" required>
-            </div>
-</div>
+        </form>
 
-<input type="submit" name="add" value="post">
-    </form>
-    <script src="js/seller.js"></script>
-</body>
 
-</html>
+    </body>
+
+    </html>
