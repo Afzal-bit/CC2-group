@@ -171,13 +171,13 @@
                </li>
                <br>
               <li>
-              <a href="favorites.php?Id=<?php echo$_GET['Id']?>"><i class="fa fa-heart" aria-hidden="true"></i>wishlist</a>
-             <?php
-              $c_id = $_SESSION['loggedin'];
-                  $p_id =$_GET['Id'];
-
-              $insertWishList = "INSERT INTO wishlist (pid, uid) VALUES ('$p_id', '$c_id')";
-               ?>
+              <input type="submit" value="WishList" name="Add"/>
+              <?php
+             // Add methods to DB
+            if(isset($_POST['Add'])){
+                $advert->updatewish($row['Id']);
+            }
+		      	?>
               </ul>
             </form>
 

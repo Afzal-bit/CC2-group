@@ -1,5 +1,4 @@
 <?php
-
 include ('db/dbConnection.php');
 class Advertisement
 {
@@ -36,11 +35,9 @@ class Advertisement
     public function setPrice($price) {
         $this->_price = $price;
     }
-
     public function setCondition($condition) {
         $this->_condition = $condition;
     }
-
     public function setYear($year) {
         $this->_year = $year;
     }
@@ -53,26 +50,21 @@ class Advertisement
     public function setMileage($mileage) {
         $this->_mileage = $mileage;
     }
-
     public function setBody($body) {
         $this->_body = $body;
     }
-
     public function setEngineCapacity($engineCapacity) {
         $this->_engineCapacity = $engineCapacity;
     }
     public function setDescription($description) {
         $this->_description = $description;
     }
-
     public function setMainImage($mainImage) {
         $this->_mainImage = $mainImage;
     }
-
     public function setSName($sName) {
         $this->_sName = $sName;
     }
-
     public function setEmail($email) {
         $this->_email = $email;
     }
@@ -85,7 +77,6 @@ class Advertisement
     public function setApproved($approved) {
         $this->_approved = $approved;
     }
-
     
     public function __construct() {
         $this->db = new dbConnection();
@@ -104,7 +95,6 @@ class Advertisement
             $result = $this->db->query($query) or die($this->db->error); 
             $row = $result->fetch_array();			
             return $row;
-
         } else {
             return false;
           }
@@ -114,42 +104,43 @@ class Advertisement
 	
 	public function details(){
 		
-
 		$result=mysqli_query($this->db,"SELECT Id, title, brand, model, fuel, price, sellername FROM advertisement WHERE approved = 'No'");
         return $result;
 		
     }
-
     public function adListing(){
 		
-
 		$result=mysqli_query($this->db,"SELECT Id, title, mileage, 
         price, transmission, enginecapacity, mainimage from advertisement WHERE approved = 'Yes'");
         return $result;
-		
+
     }
 
-  
+    public function getFavorites(){
+        $result=mysqli_query($this->db,"SELECT Id, title, mileage, 
+        price, transmission, enginecapacity, mainimage from advertisement WHERE wishList = 'Yes'");
+        return $result;
+
+    }
 
     public function updateAd($Id){
-        
+
             mysqli_query($this->db,"UPDATE advertisement SET Approved='yes' WHERE Id= '$Id';");
- 
-    }
 
-
-    public function getFavorites($userId){
-        $result=mysqli_query($this->db,"SELECT favoriteId, adId, title, mainimage, mileage, enginecapacity, transmission, price
-         from favorites WHERE userId = $userId");
-        return $result;
-		
     }
+    //updating wishlist
+    public function updatewish($Id){
+
+        mysqli_query($this->db,"UPDATE advertisement SET wishList='yes' WHERE Id= '$Id';");
+
+}
+
+    
 
     public function getAdDetails($id){
         $result=mysqli_query($this->db,"SELECT * from advertisement WHERE id = $id");
         return $result;
     }
-
     public function getAdImages($id){
         $result=mysqli_query($this->db,"SELECT pathname from ad_images WHERE Ad_Id = $id");
         return $result;
