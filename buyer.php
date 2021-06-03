@@ -128,7 +128,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                             <h2>Get to know who <em>we are</em></h2>
                             <p>This platform is created to make to buyer to buy and seller to sell a car with less effort and cost. 
                                  this platform only verfies valid seller Ads in order to deliver a good vehicle to buyer</p>
-                                 <a href="aboutUs.html" class="round-button">Read More</a>
+                                 <a href="#" class="round-button">Read More</a>
                         </div>
                     </div>
                 </div>
