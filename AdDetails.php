@@ -169,8 +169,15 @@
                          <strong class="pull-right"><?php echo $row['Transmission'];?></strong>
                     </div>
                </li>
+               <br>
+              <li>
+              <a href="favorites.php?Id=<?php echo$_GET['Id']?>"><i class="fa fa-heart" aria-hidden="true"></i>wishlist</a>
+             <?php
+              $c_id = $_SESSION['loggedin'];
+                  $p_id =$_GET['Id'];
 
-               
+              $insertWishList = "INSERT INTO wishlist (pid, uid) VALUES ('$p_id', '$c_id')";
+               ?>
               </ul>
             </form>
 

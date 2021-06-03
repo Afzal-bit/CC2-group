@@ -61,7 +61,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                                 <div id="myDropdown1" class="dropdown-menu">
                                     <a class="dropdown-item" href="myAccount.php">My Account</a>
 								
-                                    <a class="dropdown-item" href="favourites.php">Favourites</a>
+                                    <a class="dropdown-item" href="favorites.php">Favourites</a>
                                     <a class="dropdown-item" href="logout.php">Logout</a>
                                 </div>
                             </li>
@@ -121,89 +121,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
     </div>
 
 
-    <!-- Search Form -->
-   
-
-   
-    <div class="s007">
-        <form >
-            <div class="inner-form">
-                <div class="advance-search">
-                    <span class="desc">Advanced Search</span>
-                    <div class="row">
-                        <div class="input-field">
-                            <div class="input-select">
-                                <select data-trigger="" name="choices-single-defaul">
-                      <option placeholder="" value="">ACCESSORIES</option>
-                      <option>ACCESSORIES</option>
-                      <option>SUBJECT B</option>
-                      <option>SUBJECT C</option>
-                    </select>
-                            </div>
-                        </div>
-                        <div class="input-field">
-                            <div class="input-select">
-                                <select data-trigger="" name="choices-single-defaul">
-                      <option placeholder="" value="">COLOR</option>
-                      <option>GREEN</option>
-                      <option>SUBJECT B</option>
-                      <option>SUBJECT C</option>
-                    </select>
-                            </div>
-                        </div>
-                        <div class="input-field">
-                            <div class="input-select">
-                                <select data-trigger="" name="choices-single-defaul">
-                      <option placeholder="" value="">SIZE</option>
-                      <option>SIZE</option>
-                      <option>SUBJECT B</option>
-                      <option>SUBJECT C</option>
-                    </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row second">
-                        <div class="input-field">
-                            <div class="input-select">
-                                <select data-trigger="" name="choices-single-defaul">
-                      <option placeholder="" value="">SALE</option>
-                      <option>SALE</option>
-                      <option>SUBJECT B</option>
-                      <option>SUBJECT C</option>
-                    </select>
-                            </div>
-                        </div>
-                        <div class="input-field">
-                            <div class="input-select">
-                                <select data-trigger="" name="choices-single-defaul">
-                      <option placeholder="" value="">TIME</option>
-                      <option>THIS WEEK</option>
-                      <option>SUBJECT B</option>
-                      <option>SUBJECT C</option>
-                    </select>
-                            </div>
-                        </div>
-                        <div class="input-field">
-                            <div class="input-select">
-                                <select data-trigger="" name="choices-single-defaul">
-                      <option placeholder="" value="">TYPE</option>
-                      <option>TYPE</option>
-                      <option>SUBJECT B</option>
-                      <option>SUBJECT C</option>
-                    </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row third">
-                        <div class="input-field">
-                            <button class="btn-search">Search</button>
-                            <button class="btn-delete" id="delete">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
+    
     <div class="container" style="width: 700px;">
     
    
