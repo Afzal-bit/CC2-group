@@ -114,7 +114,7 @@ if(isset($_POST['add'])){
 
     <head>
         <meta charset="utf-8">
-        <title>HTML CSS Register Form</title>
+        <title>Add Advertisement</title>
         <link rel="stylesheet" href="css/addAdvert_style.css">
     </head>
 
@@ -303,3 +303,4 @@ if(isset($_POST['add'])){
     </body>
 
     </html>
+
