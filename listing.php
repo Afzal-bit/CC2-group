@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>PHPJabbers.com | Free Car Dealer Website Template</title>
+    <title>All Advertisements</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
@@ -38,33 +38,34 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">Car Dealer<em> Website</em></a>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
-                        <ul class="nav">
-                            <li><a href="buyer.php">Home</a></li>
-                            <li><a href="cars.html" class="active">Cars</a></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+                <nav class="main-nav">
+                       
+                       <a href="index.html" class="logo">Car<em>Rodio</em></a>
+                   
+                       <ul id="toggle_nav" class="nav" >
+                           <li><a href="sellerDashboard.php" class="active">Home</a></li>
+                           <li><a href="listing.php">Listings</a></li>
+                           
 
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="about.html">About Us</a>
-                                    <a class="dropdown-item" href="blog.html">Blog</a>
-                                    <a class="dropdown-item" href="team.html">Team</a>
-                                    <a class="dropdown-item" href="testimonials.html">Testimonials</a>
-                                    <a class="dropdown-item" href="faq.html">FAQ</a>
-                                    <a class="dropdown-item" href="terms.html">Terms</a>
-                                </div>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
+
+                  
+
+                           <li class="dropdown">
+                               <a id="sub_menu1" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
+                             
+                               <div id="myDropdown1" class="dropdown-menu">
+                                  
+                                  
+                                   <a class="dropdown-item" href="logout.php">Logout</a>
+                               </div>
+                           </li>
+
+                       </ul>        
+                       <a id="ham_icon" class='menu-trigger'>
+                           <span>Menu</span>
+                       </a>
+                       <!-- ***** Menu End ***** -->
+                   </nav>
                 </div>
             </div>
         </div>
@@ -80,6 +81,7 @@
                         <br>
                         <br>
                         <h2>Our <em>Cars</em></h2>
+                        <p>You can view all the cars here!</p>
                     </div>
                 </div>
             </div>
@@ -93,14 +95,14 @@
             <br>
             <br>
             <div class="contact-form">
-                <form action="#" id="contact">
+                <form action="search_result.php" id="contact" method="post">
                     <div class="row">
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                             <div class="form-group">
                                 <label>Used/New:</label>
 
-                                <select>
-                                      <option value="">All</option>
+                                <select name="cCondition">
+                                      <option value="">-- All --</option>
                                       <option value="new">New vehicle</option>
                                       <option value="used">Used vehicle</option>
                                  </select>
@@ -109,56 +111,19 @@
 
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <label>Vehicle Type:</label>
+                                <label>Body Type:</label>
 
-                                <select>
+                                <select name="cBody">
                                       <option value="">--All --</option>
-                                      <option value="">--All --</option>
-                                      <option value="">--All --</option>
-                                      <option value="">--All --</option>
-                                      <option value="">--All --</option>
-                                 </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label>Make:</label>
-
-                                <select>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                 </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label>Model:</label>
-
-                                <select>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                 </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label>Price:</label>
-
-                                <select>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
+                                      <option value="Hatchback"> Hatchback </option>
+                                      <option value="Sedan"> Sedan </option>
+                                      <option value="SUV"> SUV </option>
+                                      <option value="Coupe"> Coupe </option>
+                                      <option value="Convertible"> Convertible </option>
+                                      <option value="Wagon"> Wagon </option>
+                                       <option value="Saloon"> Saloon </option>
+                                       <option value="MPV"> MPV </option>
+            
                                  </select>
                             </div>
                         </div>
@@ -167,97 +132,38 @@
                             <div class="form-group">
                                 <label>Mileage:</label>
 
-                                <select>
+                                <select name="mileage">
                                       <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
+                                      <option>0 - 10 000</option>
+                                      <option>10 000 - 45 000</option>
+                                      <option>45 000 - 80 000</option>
+                                      <option>80 000 - 100 000</option>
+                                      <option>100 000+</option>
                                  </select>
                             </div>
                         </div>
 
                         <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                             <div class="form-group">
-                                <label>Engine size:</label>
+                                <label>Transmission:</label>
 
-                                <select>
+                                <select name="transmission">
                                       <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
+                                    
+                                      <option> Manual </option>
+                                      <option> Automatic </option>
                                  </select>
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label>Power:</label>
 
-                                <select>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                 </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label>Fuel:</label>
-
-                                <select>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                 </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label>Gearbox:</label>
-
-                                <select>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                 </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label>Doors:</label>
-
-                                <select>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                 </select>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                            <div class="form-group">
-                                <label>Number of seats:</label>
-
-                                <select>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                      <option value="">-- All --</option>
-                                 </select>
-                            </div>
-                        </div>
+                        
                     </div>
 
                     <div class="col-sm-4 offset-sm-4">
                         <div class="main-button text-center">
-                            <a href="#">Search</a>
+                        <input type="submit" name="search" value="Search">
+                
                         </div>
                     </div>
                     <br>
@@ -323,7 +229,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p>
-                        Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a>
+                        Copyright © 2021 CarRodio
                     </p>
                 </div>
             </div>
@@ -331,7 +237,7 @@
     </footer>
 
 
-
+    <script src="js/seller.js"></script>
 
 </body>
 
