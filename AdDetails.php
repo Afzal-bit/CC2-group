@@ -169,15 +169,8 @@
                          <strong class="pull-right"><?php echo $row['Transmission'];?></strong>
                     </div>
                </li>
-               <br>
-              <li>
-              <input type="submit" value="WishList" name="Add"/>
-              <?php
-             // Add methods to DB
-            if(isset($_POST['Add'])){
-                $advert->updatewish($row['Id']);
-            }
-		      	?>
+
+               
               </ul>
             </form>
 
@@ -235,7 +228,84 @@
 
             <br>
           </div>
+          
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+    			
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="rating-block">
+					<h4>Average user rating</h4>
+					<h2 class="bold padding-bottom-7">4.3 <small>/ 5</small></h2>
+					<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+					  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					</button>
+					<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+					  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					</button>
+					<button type="button" class="btn btn-warning btn-sm" aria-label="Left Align">
+					  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					</button>
+					<button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+					  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					</button>
+					<button type="button" class="btn btn-default btn-grey btn-sm" aria-label="Left Align">
+					  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+					</button>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<h4>Rating breakdown</h4>
+		
+			</div>			
+		</div>			
+		
+		<div class="row">
+			<div class="col-sm-7">
+				<hr/>
+				<div class="review-block">
+					<div class="row">
+						<div class="col-sm-3">
+							<img src="http://dummyimage.com/60x60/666/ffffff&text=No+Image" class="img-rounded">
+							<div class="review-block-name"><a href="#">carguy</a></div>
+							<div class="review-block-date">January 29, 2016<br/>1 day ago</div>
+						</div>
+						<div class="col-sm-9">
+							<div class="review-block-rate">
+								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+								</button>
+								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+								</button>
+								<button type="button" class="btn btn-warning btn-xs" aria-label="Left Align">
+								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+								</button>
+								<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+								</button>
+								<button type="button" class="btn btn-default btn-grey btn-xs" aria-label="Left Align">
+								  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+								</button>
+							</div>
+							<div class="review-block-title">good advert</div>
+							<div class="review-block-description">this was nice in advert</div>
+						</div>
+					</div>
+          
+					<hr/>
+			
+				</div>
+			</div>
+		</div>
+		
+    </div> 
 
         <br>
         <br>
@@ -245,68 +315,23 @@
 
     <!-- Footer Starts Here -->
     <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 footer-item">
-            <h4>CarRodio</h4>
-            <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
-            
-          </div>
-          <div class="col-md-3 footer-item">
-            <h4>Useful Links</h4>
-            <ul class="menu-list">
-              <li><a href="#">Vivamus ut tellus mi</a></li>
-              <li><a href="#">Nulla nec cursus elit</a></li>
-              <li><a href="#">Vulputate sed nec</a></li>
-              <li><a href="#">Cursus augue hasellus</a></li>
-              <li><a href="#">Lacinia ac sapien</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 footer-item">
-            <h4>Additional Pages</h4>
-            <ul class="menu-list">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Terms</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 footer-item last-item">
-            <h4>Contact Us</h4>
-            <div class="contact-form">
-              <form id="contact footer-contact" action="" method="post">
-                <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                    <fieldset>
-                      <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="filled-button">Send Message</button>
-                    </fieldset>
-                  </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>
+                        Copyright © 2021 CarRodio
+                    </p>
                 </div>
-              </form>
             </div>
-          </div>
         </div>
-      </div>
     </footer>
-    
-    
 
+
+    <script src="js/seller.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="js/bootstrap.min.js"></script>
     
 
 
