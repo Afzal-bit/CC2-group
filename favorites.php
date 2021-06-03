@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>PHPJabbers.com | Free Car Dealer Website Template</title>
+    <title>Favorites</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
@@ -101,7 +101,7 @@
 
                 <div class="row">
                 <?php
-            $result=$advert->adListing();
+            $result=$advert->getFavorites($_SESSION['id']);
 
             while($row = mysqli_fetch_array($result)) {
                 
@@ -129,7 +129,7 @@
                                 </p>
 
                                 <ul class="social-icons">
-                                    <li><a href="car-details.html">+ View Car</a></li>
+                                <li><a href="AdDetails.php?Id=<?php echo $row['adId'];?>">+ View Car</a></li>
                                 </ul>
                             </div>
                         </div>
