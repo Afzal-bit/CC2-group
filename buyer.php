@@ -41,21 +41,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                         <ul id="toggle_nav" class="nav" >
                             <li><a href="index.html" class="active">Home</a></li>
                             <li><a href="listing.php">Listings</a></li>
+				<li><a href="logout.php">Logout</a></li>
                             
 
 
                             
                         
-                            <li class="dropdown">
-                                <a id="sub_menu1" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
-                              
-                                <div id="myDropdown1" class="dropdown-menu">
-                                    <a class="dropdown-item" href="myAccount.php">My Account</a>
-								
-                                    <a class="dropdown-item" href="favourites.php">Favourites</a>
-                                    <a class="dropdown-item" href="logout.php">Logout</a>
-                                </div>
-                            </li>
+                            
 
                         </ul>        
                         <a id="ham_icon" class='menu-trigger'>
