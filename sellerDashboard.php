@@ -41,7 +41,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                         <a href="index.html" class="logo">Car<em>Rodio</em></a>
                     
                         <ul id="toggle_nav" class="nav" >
-                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="sellerDashboard.php" class="active">Home</a></li>
                             <li><a href="listing.php">Listings</a></li>
                             <li class="dropdown">
                                 <a id="sub_menu" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Advertisements</a>
@@ -49,20 +49,18 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                                 <div id="myDropdown" class="dropdown-menu">
                                 <a class="dropdown-item" href="addAvert.php">Add Advertisement</a>
                                     
-                                    <a class="dropdown-item" href="approved.php">Approved</a>
-                                    <a class="dropdown-item" href="terms.html">Pending Approval</a>
+                                  
                                 </div>
                             </li>
 
 
-                            
-                            <li><a href="listings.php.php">Fleet</a></li> 
+                   
 
                             <li class="dropdown">
                                 <a id="sub_menu1" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Account</a>
                               
                                 <div id="myDropdown1" class="dropdown-menu">
-                                    <a class="dropdown-item" href="myAccount.php">My Account</a>
+                                   
                                    
                                     <a class="dropdown-item" href="logout.php">Logout</a>
                                 </div>
@@ -87,13 +85,12 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                         <h6>Welcome to CarRodio</h6>
                         <h4>Sell your vehicle<br> at the best Market value<br> with easy steps </h4>
                         <p>Sell your car and upgrade to a newer car. Using CarRodio you can Sell and Buy too!</p>
-                        <a href="home.html" class="round-button">contact us</a>
+                        <a href="#footer" class="round-button">contact us</a>
                     </div>
                 </div>
             </div>
-            <br>
-                    <br>
-                    <h1> seller all ads </h1>
+          
+                
                     
         </div>
     </div>
@@ -130,15 +127,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
 
                 </div>
 
-                <div class="col-md-3 footer-item">
-                    <h4>Quick Links</h4>
-                    <ul class="menu-list">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Terms</a></li>
-                    </ul>
-                </div>
+                
                 <div class="col-md-3 footer-item last-item">
                     <h4>Contact Us</h4>
                     <div class="contact-form">
@@ -172,7 +161,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
         </div>
     </footer>
 
-    <div class="sub-footer">
+    <div id="footer" class="sub-footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -188,4 +177,5 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
 </body>
 
 </html>
+
 
