@@ -40,7 +40,7 @@
                 <div class="col-12">
                 <nav class="main-nav">
                        
-                       <a href="index.html" class="logo">Car<em>Rodio</em></a>
+                       <a href="buyer.php" class="logo">Car<em>Rodio</em></a>
                    
                        <ul id="toggle_nav" class="nav" >
                            <li><a href="sellerDashboard.php" class="active">Home</a></li>

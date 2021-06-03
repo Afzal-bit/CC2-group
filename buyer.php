@@ -41,6 +41,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
                         <ul id="toggle_nav" class="nav" >
                             <li><a href="index.html" class="active">Home</a></li>
                             <li><a href="listing.php">Listings</a></li>
+                            <li><a href="favorites.php">Wishlist</a></li>
 				<li><a href="logout.php">Logout</a></li>
                             
 
@@ -75,31 +76,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false) {
             </div>
 
 
-            <div class="slide slide2">
-                <div class="img-fill">
-                    <div class="text-slide">
-                        <h6>Welcome to CarRodio</h6>
-                        <h4>Sell your vehicle<br> at the best Market value<br> with easy steps </h4>
-                        <p>Sell your car and upgrade to a newer car. Using CarRodio you can Sell and Buy too!</p>
-                        <a href='#bottom' class="round-button">contact us</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="slide slide3">
-                <div class="img-fill">
-                    <div class="text-slide">
-                        <h6>Welcome to CarRodio</h6>
-                        <h4>Sell your vehicle<br> at the best Market value<br> with easy steps </h4>
-                        <p>Sell your car and upgrade to a newer car. Using CarRodio you can Sell and Buy too!</p>
-                        <a href='#bottom' class="round-button">contact us</a>
-                    </div>
-                </div>
-            </div>
-
-            <a class="previous" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
+          
         </div>
     </div>
 
