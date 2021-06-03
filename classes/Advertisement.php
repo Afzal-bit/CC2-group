@@ -129,14 +129,20 @@ class Advertisement
 		
     }
 
+  
+
     public function updateAd($Id){
         
             mysqli_query($this->db,"UPDATE advertisement SET Approved='yes' WHERE Id= '$Id';");
  
     }
 
-    public function getFavorites($userId){
 
+    public function getFavorites($userId){
+        $result=mysqli_query($this->db,"SELECT favoriteId, adId, title, mainimage, mileage, enginecapacity, transmission, price
+         from favorites WHERE userId = $userId");
+        return $result;
+		
     }
 
     public function getAdDetails($id){
